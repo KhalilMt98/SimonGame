@@ -67,6 +67,26 @@ function animatePress() {
 }
 
 function answer(currentLevel) {
+    
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    if (userClickedPattern.length === gamePattern.length) {
+    setTimeout(function() {
+        nextSequence();
+    }, 1000);
+    }
+} else {
+    playSound("wrong");
+    document.body.classList.add("game-over");
+    document.querySelector("#level-title").textContent = "Game Over, Press Any Key to Restart";
+
+    setTimeout(function() {
+    document.body.classList.remove("game-over");
+    }, 200);
+
+    level = 0;
+    gamePattern = [];
+    started = false;
+}
 }
 
 
