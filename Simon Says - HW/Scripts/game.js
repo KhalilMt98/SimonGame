@@ -56,6 +56,14 @@ function playSound() {
 }
 
 function animatePress() {
+    
+  let button = document.getElementById(currentColor);
+  if (button) {
+      button.classList.add("pressed");
+      setTimeout(function() {
+      button.classList.remove("pressed");
+      }, 100);
+  }
 }
 
 function answer(currentLevel) {
