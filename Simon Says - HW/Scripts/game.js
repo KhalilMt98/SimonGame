@@ -24,6 +24,7 @@ button.addEventListener("click", function() {
     let userChosenColor = this.id;
     userClickedPattern.push(userChosenColor);
     playSound(userChosenColor);
+    
     animatePress(userChosenColor);
     answer(userClickedPattern.length - 1);
 });
